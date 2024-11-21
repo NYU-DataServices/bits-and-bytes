@@ -1,5 +1,5 @@
 --- 
-title: 'Bits and Bytes'
+title: 'Bits & Bytes'
 subtitle: 'The NYU Data Services Newsletter'
 subscriptionURL: '#'
 ---
@@ -15,26 +15,27 @@ subscriptionURL: '#'
 
     <link rel="stylesheet" href="{{ '/assets/css/styles.css' | url }}">
   </head>
-
-  <body class="py-16 bg-purple-50 text-center">
-    <h1 class="mb-2 text-5xl text-center text-gray-800 font-bold font-sans">
-      {{ title }}
-    </h1>
-    <p class="text-gray-700 font-sans">
-      {{ subtitle }}
-    </p>
-    <div class="my-6">
-      <a href="{{ subscriptionURL }}" target="_blank">
-        <button class="rounded-md px-2 py-2 border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-purple-50 duration-300">Subscribe</button>
-      </a>
+  <body>
+    <div role="main" class="py-16 bg-purple-50 text-center h-dvh">
+      <h1 class="mb-2 text-5xl text-center text-gray-800 font-bold font-sans">
+        {{ title }}
+      </h1>
+      <p class="text-gray-700 font-sans">
+        {{ subtitle }}
+      </p>
+      <div class="my-6">
+        <a href="{{ subscriptionURL }}" target="_blank">
+          <button class="rounded-md px-2 py-2 border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-purple-50 duration-300">Subscribe</button>
+        </a>
+      </div>
+      <h2 class="mt-12 mb-6 text-3xl  text-gray-800 font-bold font-sans">Newsletter Archive</h2>
+      <ul>
+        {% for file in passthroughFiles %}
+          <li class="py-1">
+            <a class="text-purple-600 underline hover:no-underline before:pr-2 after:pl-2 hover:before:content-['🌟'] hover:after:content-['🌟']" href="{{ '/newsletters' | url }}/{{ file }}">{{ file }}</a>
+          </li>
+        {% endfor %}
+      </ul>
     </div>
-    <h2 class="mt-12 mb-6 text-3xl  text-gray-800 font-bold font-sans">Newsletter Archive</h2>
-    <ul>
-      {% for file in passthroughFiles %}
-        <li class="py-1">
-          <a class="text-purple-600 underline hover:no-underline before:pr-2 after:pl-2 hover:before:content-['🌟'] hover:after:content-['🌟']" href="{{ '/newsletters' | url }}/{{ file }}">{{ file }}</a>
-        </li>
-      {% endfor %}
-    </ul>
   </body>
 </html>
