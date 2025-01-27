@@ -2,6 +2,11 @@
 title: 'Bits and Bytes'
 subtitle: 'The NYU Data Services Newsletter'
 subscriptionURL: 'https://app.e2ma.net/app2/audience/signup/2007535/1978489/'
+newsletters:
+- label: 'January 2025'
+  webview: 'https://t.e2ma.net/webview/r45f2m/50a6aab34c6aaa3acbd882424b278bb0'
+- label: 'December 2024'
+  webview: 'https://t.e2ma.net/webview/jm6dwm/5b33a388f279712c3ef58e0749672e7b'
 ---
 
 <!doctype html>
@@ -30,9 +35,9 @@ subscriptionURL: 'https://app.e2ma.net/app2/audience/signup/2007535/1978489/'
       </div>
       <h2 class="mt-12 mb-6 text-3xl  text-gray-800 font-bold font-sans">Newsletter Archive</h2>
       <ul>
-        {% for file in passthroughFiles %}
+        {% for newsletter in newsletters %}
           <li class="py-1">
-            <a class="text-purple-600 underline hover:no-underline before:pr-2 after:pl-2 hover:before:content-['🌟'] hover:after:content-['🌟']" href="{{ '/newsletters' | url }}/{{ file }}">{{ file }}</a>
+            <a class="text-purple-600 underline hover:no-underline before:pr-2 after:pl-2 hover:before:content-['🌟'] hover:after:content-['🌟']" href="{{ newsletter.webview }}">{{ newsletter.label }}</a>
           </li>
         {% endfor %}
       </ul>
